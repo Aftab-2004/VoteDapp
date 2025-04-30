@@ -12,7 +12,8 @@ contract Election {
         uint voteCount;
     }
 
-    mapping(address => bool) public voters;
+    uint public votingRound = 1;
+    mapping(address => uint) public lastVotedRound;
     Candidate[] public candidates;
 
     event Voted(address voter, uint candidateId);
@@ -40,10 +41,10 @@ contract Election {
     }
 
     function vote(uint _candidateId) public {
-        require(!voters[msg.sender], "You have already voted.");
         require(_candidateId < candidates.length, "Invalid candidate ID.");
+        require(lastVotedRound[msg.sender] < votingRound, "You have already voted this round.");
 
-        voters[msg.sender] = true;
+        lastVotedRound[msg.sender] = votingRound;
         candidates[_candidateId].voteCount++;
 
         emit Voted(msg.sender, _candidateId);
@@ -57,10 +58,7 @@ contract Election {
         for (uint i = 0; i < candidates.length; i++) {
             candidates[i].voteCount = 0;
         }
-
-        // Do NOT attempt to reset voters mapping (not feasible)
-        // Frontend should handle per-election restrictions or reset state if needed
-
+        votingRound += 1;
         emit VotesReset();
     }
 
