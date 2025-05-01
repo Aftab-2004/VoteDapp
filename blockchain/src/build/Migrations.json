@@ -447,7 +447,7 @@
   "sourceMap": "25:304:2:-:0;;;177:43;;;;;;;;;-1:-1:-1;197:5:2;:18;;-1:-1:-1;;;;;;197:18:2;205:10;197:18;;;25:304;;;;;;",
   "deployedSourceMap": "25:304:2:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;73:36;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;49:20;;;:::i;:::-;;;;;;;:::i;224:103::-;;;;;;:::i;:::-;;:::i;:::-;;73:36;;;;:::o;49:20::-;;;-1:-1:-1;;;;;49:20:2;;:::o;224:103::-;160:5;;-1:-1:-1;;;;;160:5:2;146:10;:19;142:26;;;286:24:::1;:36:::0;;;142:26;224:103;:::o;14:190:3:-;;126:2;114:9;105:7;101:23;97:32;94:2;;;147:6;139;132:22;94:2;-1:-1:-1;175:23:3;;84:120;-1:-1:-1;84:120:3:o;209:203::-;-1:-1:-1;;;;;373:32:3;;;;355:51;;343:2;328:18;;310:102::o;417:177::-;563:25;;;551:2;536:18;;518:76::o",
   "source": "pragma solidity ^0.8.0;\n\ncontract Migrations {\n  address public owner;\n  uint public last_completed_migration;\n\n  modifier restricted() {\n    if (msg.sender == owner) _;\n  }\n\n  constructor() {\n    owner = msg.sender;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "C:\\Users\\nanan\\Documents\\comp sci\\Block\\E-Voting-App-master\\E-Voting-App-master\\blockchain\\src\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\afire\\Downloads\\E-Voting-App-master (1)\\E-Voting-App-master\\E-Voting-App-master\\blockchain\\src\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -844,12 +844,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x629539A86b128F7fc46dEb0f68310BC4860A73aC",
-      "transactionHash": "0x8924a12ff2884d8b3f7d7e0249440eda1d52df2103eccbea987693dffa1f9d17"
+      "address": "0x9AD0ebBA9477E6b8b73C39E413F092AEcAf8dFfc",
+      "transactionHash": "0x0765b7b567f92d9c1cfca481105e7d5f66fdbc7628b1999662f8f2944276dfc9"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2025-04-30T09:35:20.946Z",
+  "updatedAt": "2025-04-30T23:51:24.658Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

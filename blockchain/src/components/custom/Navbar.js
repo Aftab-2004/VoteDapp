@@ -12,36 +12,70 @@ class Navbar extends Component {
             location: this.props.history.location.pathname
         })
     }
+    
     render(){
+        const navStyle = {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '1rem 2rem',
+            backgroundColor: 'var(--background-light)',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)'
+        };
 
-        if(this.state.location === "/" || this.state.location === "/choose"  || this.state.location === "/vote"  || this.state.location === "/login"){
+        const containerStyle = {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            width: '100%',
+            maxWidth: '1200px',
+            margin: '0 auto'
+        };
+
+        const logoStyle = {
+            color: 'var(--text-primary)',
+            fontSize: '1.5rem',
+            fontWeight: 'bold',
+            textDecoration: 'none'
+        };
+
+        const navLinksStyle = {
+            display: 'flex',
+            gap: '2rem',
+            listStyle: 'none',
+            margin: 0,
+            padding: 0
+        };
+
+        const linkStyle = {
+            color: 'var(--text-primary)',
+            textDecoration: 'none',
+            fontWeight: '500',
+            transition: 'color 0.3s ease'
+        };
+
+        if(this.state.location === "/" || this.state.location === "/choose" || this.state.location === "/vote" || this.state.location === "/login"){
             return ( 
-                <nav className="nav-wrapper black darken-2">
-                    <div className="container">
-                        <a className="brand-logo">
-                            E-Election
-                        </a>
+                <nav style={navStyle}>
+                    <div style={containerStyle}>
+                        <a style={logoStyle}>E-Election</a>
                     </div>
                 </nav>
             )
-        }else{
+        } else {
             return(
-                <nav className="nav-wrapper black darken-2">
-                    <div className="container">
-                        <a className="brand-logo">
-                            E-Election
-                        </a>
-                        <ul className="right">
-                            <li><NavLink to="/">Home</NavLink></li>
-                            <li><NavLink to="/newelection">New Election</NavLink></li>
-                            <li><NavLink to="/elections">Elections</NavLink></li>
+                <nav style={navStyle}>
+                    <div style={containerStyle}>
+                        <a style={logoStyle}>E-Election</a>
+                        <ul style={navLinksStyle}>
+                            <li><NavLink to="/" style={linkStyle} activeStyle={{color: 'var(--primary-color)'}}>Home</NavLink></li>
+                            <li><NavLink to="/newelection" style={linkStyle} activeStyle={{color: 'var(--primary-color)'}}>New Election</NavLink></li>
+                            <li><NavLink to="/elections" style={linkStyle} activeStyle={{color: 'var(--primary-color)'}}>Elections</NavLink></li>
                         </ul>
                     </div>
                 </nav>
             )
         }
-
-        
     }
 }
 
